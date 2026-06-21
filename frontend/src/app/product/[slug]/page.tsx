@@ -3,49 +3,6 @@ import { Metadata } from "next";
 import ProductView from "./ProductView";
 
 async function getProduct(slug: string) {
-  if (slug === "test-tisort") {
-    return {
-      id: 1,
-      name: "Test Oversize Tişört",
-      slug: "test-tisort",
-      price: "349.99",
-      description:
-        "Laravel API ve Next.js ISR yapısıyla entegre çalışan, dinamik özel alanlar ve varyasyon destekli örnek ürün kurgusu.",
-      image_url: null,
-      fields: [
-        { id: 1, name: "Kumaş Tipi", type: "text", value: "100% Pamuk" },
-        {
-          id: 2,
-          name: "Yıkama Talimatı",
-          type: "text",
-          value: "30 Derecede Yıkayınız",
-        },
-      ],
-      variations: [
-        {
-          id: 101,
-          sku: "TST-TSHRT-RED-S",
-          price: "349.99",
-          stock: 12,
-          options: [
-            { id: 10, name: "Renk", value: "Kırmızı" },
-            { id: 11, name: "Beden", value: "S" },
-          ],
-        },
-        {
-          id: 102,
-          sku: "TST-TSHRT-BLU-M",
-          price: "369.99",
-          stock: 8,
-          options: [
-            { id: 12, name: "Renk", value: "Mavi" },
-            { id: 13, name: "Beden", value: "M" },
-          ],
-        },
-      ],
-    };
-  }
-
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/products/${slug}`,
